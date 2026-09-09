@@ -2,6 +2,8 @@
 
 在手机上通过 HTTPS 代理的 CONNECT 隧道，把飞牛 fnOS 的端口安全地映射到手机本地。不依赖 ADB / Frida / root，纯 Android Socket 实现。
 
+![截图](screenshot.jpg)
+
 ## 功能
 
 - **端口映射**：通过已有 HTTP/HTTPS 代理建立 CONNECT 隧道，将飞牛端口（如 5666）映射到手机 `127.0.0.1`，随时随地像访问本机一样访问 NAS
