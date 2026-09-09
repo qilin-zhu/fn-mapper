@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">飞牛连接器</string>
+
+    <!-- 主界面（启动页风格） -->
+    <string name="brand_title">飞牛</string>
+    <string name="brand_subtitle">fnOS · 端口映射</string>
+    <string name="status_running">映射运行中</string>
+    <string name="status_stopped">已停止</string>
+    <string name="btn_start">启动映射</string>
+    <string name="btn_stop">停止映射</string>
+    <string name="btn_lan_enable">开启局域网访问</string>
+    <string name="btn_lan_disable">关闭局域网访问</string>
+    <string name="btn_open_fnos">打开飞牛</string>
+    <string name="btn_details">详情</string>
+    <string name="fnos_not_installed">未安装飞牛 App，请先安装</string>
+
+    <!-- 飞牛影视页（左滑第 2 页） -->
+    <string name="fnvideo_title">飞牛影视</string>
+    <string name="fnvideo_subtitle">飞牛媒体中心</string>
+    <string name="btn_open_fnvideo">打开飞牛影视</string>
+    <string name="fnvideo_not_installed">未安装飞牛影视 App，请先安装</string>
+
+    <!-- 飞牛音乐页（左滑第 3 屏） -->
+    <string name="fnmusic_title">飞牛音乐</string>
+    <string name="fnmusic_subtitle">飞牛音乐中心</string>
+    <string name="btn_open_fnmusic">打开飞牛音乐</string>
+    <string name="fnmusic_not_installed">未安装飞牛音乐 App，请先安装</string>
+    <string name="hint_not_configured">请点击右上角齿轮进入设置，填写代理、飞牛地址与端口</string>
+    <string name="hint_error">最近错误：%1$s</string>
+
+    <!-- 设置页 -->
+    <string name="settings_title">映射设置</string>
+    <string name="hint_proxy_url">HTTPS 代理地址</string>
+    <string name="placeholder_proxy_url">https://proxy.example.com:8443</string>
+    <string name="hint_proxy_user">代理用户名</string>
+    <string name="hint_proxy_password">代理密码</string>
+    <string name="hint_target">飞牛地址</string>
+    <string name="placeholder_target">192.168.31.18</string>
+    <string name="hint_ports">映射端口</string>
+    <string name="placeholder_ports">5666, 5667, 8000…</string>
+    <string name="hint_scanner_url">在线地址</string>
+    <string name="placeholder_scanner_url">http://192.168.31.18:8787/ports.json</string>
+    <string name="btn_scan_qr">扫描二维码</string>
+    <string name="btn_fetch_ports">获取端口</string>
+    <string name="qr_prompt">对准 fnos-scanner 扫描页上的二维码</string>
+    <string name="fetch_ok">已获取 %1$d 个端口，确认无误后请保存</string>
+    <string name="fetch_fail">获取失败：%1$s</string>
+    <string name="fetch_empty_url">请先填写在线地址，或点「扫描二维码」</string>
+    <string name="qr_unrecognized">二维码内容无法识别</string>
+    <string name="btn_save">保存</string>
+    <string name="saved">已保存</string>
+    <string name="done">完成</string>
+    <string name="err_proxy_url">格式不正确，示例：https://proxy.example.com:8443</string>
+    <string name="err_target">格式不正确，示例：192.168.31.18</string>
+    <string name="err_ports">请填写端口，多个用逗号分隔，如 5666, 5667</string>
+    <string name="err_form">请修正标红的输入项</string>
+
+    <!-- 端口列表编辑器 -->
+    <string name="port_editor_title">端口列表</string>
+    <string name="port_editor_subtitle">端口与服务</string>
+    <string name="port_editor_hint_new">新增端口</string>
+    <string name="port_editor_hint_edit">编辑端口</string>
+    <string name="port_editor_empty">暂无端口，请在下方新增</string>
+    <string name="port_editor_manual">手动添加</string>
+    <string name="port_editor_add">添加</string>
+    <string name="port_editor_save">保存</string>
+    <string name="port_editor_cancel_edit">取消</string>
+    <string name="port_editor_delete">删除</string>
+    <string name="port_editor_bad_number">端口须为 1-65535 的数字</string>
+    <string name="port_editor_dup">端口 %1$d 已存在</string>
+    <string name="port_editor_none">请至少保留一个端口</string>
+    <string name="port_editor_applied">端口列表已更新，请保存配置</string>
+    <string name="cancel">取消</string>
+
+    <!-- 关于 -->
+    <string name="about">关于</string>
+    <string name="about_github_label">GitHub</string>
+    <string name="about_github_url">github.com/qilin-zhu/fn-mapper</string>
+    <string name="about_github_link">https://github.com/qilin-zhu/fn-mapper</string>
+    <string name="about_author_label">作者</string>
+    <string name="about_author_name">qilinzhu</string>
+    <string name="about_author_link">https://space.bilibili.com/351478349?spm_id_from=333.1007.0.0</string>
+    <string name="about_close">关闭</string>
+
+    <!-- 通知 -->
+    <string name="notif_title">飞牛连接器运行中</string>
+    <string name="notif_channel">端口映射服务</string>
+    <string name="notif_channel_desc">保持本地端口与飞牛之间的代理隧道运行</string>
+</resources>

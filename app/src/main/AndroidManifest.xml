@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Android 11+ 包可见性：检测并打开飞牛/飞牛影视/飞牛音乐 -->
+    <queries>
+        <package android:name="com.trim.app" />
+        <package android:name="com.trim.media" />
+        <package android:name="com.trim.music" />
+    </queries>
+
+    <!-- fnos-scanner 在内网以 HTTP 提供端口 JSON，需允许明文请求 -->
+    <application
+        android:usesCleartextTraffic="true"
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FNMapper">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.FNMapper.Home">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="@string/settings_title" />
+
+        <activity
+            android:name=".PortEditorActivity"
+            android:exported="false"
+            android:label="@string/port_editor_title"
+            android:theme="@style/Theme.FNMapper.PortEditor"
+            android:windowSoftInputMode="adjustResize" />
+
+        <service
+            android:name=".MappingService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Local TCP port mapping through HTTPS proxy tunnel" />
+        </service>
+    </application>
+
+</manifest>

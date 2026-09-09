@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#2563EB</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="primary_container">#D6E3FF</color>
+    <color name="on_primary_container">#001B3F</color>
+    <color name="secondary">#565E71</color>
+    <color name="on_secondary">#FFFFFF</color>
+    <color name="secondary_container">#DAE2F9</color>
+    <color name="on_secondary_container">#131B2C</color>
+    <color name="status_on">#22C55E</color>
+    <color name="status_off">#9CA3AF</color>
+    <!-- 取 fnmapper.png 圆形 logo 边缘蓝，遮罩裁切后与图标无缝融合 -->
+    <color name="ic_launcher_background">#509AF6</color>
+</resources>

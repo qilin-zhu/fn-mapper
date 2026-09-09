@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- fnos-scanner .row 同款：端口（绿色等宽大字） + 服务名 + 删除，底部细分隔线 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/rowRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_row_normal"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="12dp">
+
+        <TextView
+            android:id="@+id/pnum"
+            android:layout_width="76dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textColor="#2FD4A7"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="8080" />
+
+        <TextView
+            android:id="@+id/pname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="#DBE4EE"
+            android:textSize="13sp"
+            tools:text="nginx:latest" />
+
+        <ImageView
+            android:id="@+id/btnDelete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/port_editor_delete"
+            android:padding="8dp"
+            android:src="@drawable/ic_delete"
+            android:tint="#EF6A6A" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="6dp"
+        android:background="#161E28" />
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 飞牛影视页背景：壁纸居中显示，未覆盖区域为黑色 -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <color android:color="#000000" />
+    </item>
+    <item>
+        <bitmap
+            android:gravity="fill_vertical|center_horizontal"
+            android:src="@drawable/img_fnvideo_wallpaper" />
+    </item>
+</layer-list>

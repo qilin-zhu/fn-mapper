@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="?attr/colorControlNormal">
+    <!-- 三个定位角 + 数据点，模拟二维码图案 -->
+    <path
+        android:fillColor="@android:color/white"
+        android:fillType="evenOdd"
+        android:pathData="M2,2h7v7H2V2z M4,4v3h3V4H4z" />
+    <path
+        android:fillColor="@android:color/white"
+        android:fillType="evenOdd"
+        android:pathData="M15,2h7v7h-7V2z M17,4v3h3V4h-3z" />
+    <path
+        android:fillColor="@android:color/white"
+        android:fillType="evenOdd"
+        android:pathData="M2,15h7v7H2v-7z M4,17v3h3v-3H4z" />
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M11,2h2v2h-2z M11,6h2v2h-2z M11,11h2v2h-2z M3,11h2v2H3z M7,11h2v2H7z M15,11h2v2h-2z M19,11h2v2h-2z M11,15h2v2h-2z M11,19h2v2h-2z M15,15h2v2h-2z M19,15h2v2h-2z M15,19h2v2h-2z M19,19h2v2h-2z" />
+</vector>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 自适应图标前景：把原图缩到画布中心安全区（72/108 ≈ 66.7%）。
+     自适应图标只会显示画布中心约 2/3 的区域（外围被遮罩裁掉），
+     原图铺满画布会导致中间图案被裁，inset 16.6% 后完整图案落入安全区。 -->
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/ic_launcher_img"
+    android:insetLeft="16.6%"
+    android:insetTop="16.6%"
+    android:insetRight="16.6%"
+    android:insetBottom="16.6%" />

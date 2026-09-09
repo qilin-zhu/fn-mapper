@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- 排除敏感的代理密码，避免随自动备份导出 -->
+    <exclude domain="sharedpref" path="fn_mapper_config.xml" />
+</full-backup-content>

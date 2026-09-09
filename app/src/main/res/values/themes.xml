@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.FNMapper" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorPrimaryContainer">@color/primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <item name="colorSecondaryContainer">@color/secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/on_secondary_container</item>
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <!-- 首页：双页滑动，黑色底，白色状态栏图标 -->
+    <style name="Theme.FNMapper.Home" parent="Theme.FNMapper">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- 端口列表编辑对话框：无论系统深浅色，强制 fnos-scanner 同款深色主题 -->
+    <style name="Theme.FNMapper.PortEditor" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">#2FD4A7</item>
+        <item name="colorOnPrimary">#06130F</item>
+        <item name="colorSurface">#0E131B</item>
+        <item name="colorSurfaceContainer">#0E131B</item>
+        <item name="colorSurfaceContainerHigh">#0E131B</item>
+        <item name="colorOnSurface">#DBE4EE</item>
+        <item name="colorOnSurfaceVariant">#8FA0B2</item>
+        <item name="colorError">#EF6A6A</item>
+        <item name="android:colorBackground">#0E131B</item>
+    </style>
+</resources>

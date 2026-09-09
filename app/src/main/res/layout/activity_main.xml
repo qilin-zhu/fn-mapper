@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 首页：HorizontalScrollView 左右滑动切换页面（参考 android-launcher）
+     第 1 屏：飞牛影视播放器页（右滑进入）；第 2 屏：映射页
+     背景延伸到状态栏/工具栏区域，工具栏悬浮在页面上 -->
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.fnmapper.SnapHorizontalScrollView
+        android:id="@+id/pageScroller"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <!-- ============ 第 1 屏：飞牛影视播放器页（右滑进入） ============ -->
+            <ScrollView
+                android:id="@+id/pageFnvideo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_fnvideo_page"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="32dp">
+
+                    <!-- 顶部弹性占位：内容整体居中（对齐飞牛 App 启动页构图） -->
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:layout_width="104dp"
+                        android:layout_height="104dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_fnvideo_logo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/fnvideo_title"
+                        android:textColor="#FFFFFF"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/fnvideo_subtitle"
+                        android:textColor="#CCFFFFFF"
+                        android:textSize="15sp" />
+
+                    <!-- 映射状态 + 详情按钮 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/statusDotFnvideo"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/dot_off" />
+
+                        <TextView
+                            android:id="@+id/statusTextFnvideo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="@string/status_stopped"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnDetailsFnvideo"
+                            style="@style/Widget.Material3.Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="12dp"
+                            android:minWidth="0dp"
+                            android:minHeight="0dp"
+                            android:insetBottom="0dp"
+                            android:insetTop="0dp"
+                            android:paddingHorizontal="16dp"
+                            android:text="@string/btn_details"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            app:backgroundTint="#33FFFFFF"
+                            app:cornerRadius="16dp"
+                            app:rippleColor="#33FFFFFF" />
+                    </LinearLayout>
+
+                    <!-- 运行日志：默认隐藏，点「详情」展开 -->
+                    <TextView
+                        android:id="@+id/hintTextFnvideo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/bg_hint_card"
+                        android:lineSpacingExtra="2dp"
+                        android:padding="14dp"
+                        android:textAlignment="textStart"
+                        android:textColor="#E6FFFFFF"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        tools:text="5666: unable to connect to proxy"
+                        tools:visibility="visible" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnOpenFnvideo"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="36dp"
+                        android:text="@string/btn_open_fnvideo"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="#2563EB"
+                        app:cornerRadius="28dp"
+                        app:icon="@drawable/ic_open_app"
+                        app:iconGravity="textStart"
+                        app:iconTint="#FFFFFF"
+                        app:rippleColor="#33FFFFFF" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnToggleFnvideo"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/btn_start"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        app:backgroundTint="#26FFFFFF"
+                        app:cornerRadius="28dp"
+                        app:rippleColor="#33FFFFFF" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLanFnvideo"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/btn_lan_enable"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        app:backgroundTint="#26FFFFFF"
+                        app:cornerRadius="28dp"
+                        app:rippleColor="#33FFFFFF" />
+
+                    <!-- 底部弹性占位 -->
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+            </ScrollView>
+
+            <!-- ============ 第 2 屏：映射页 ============ -->
+            <ScrollView
+                android:id="@+id/pageMapping"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_home_blue"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="32dp">
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <!-- 品牌 logo -->
+                    <ImageView
+                        android:layout_width="104dp"
+                        android:layout_height="104dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_feiniu_logo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/brand_title"
+                        android:textColor="#FFFFFF"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/brand_subtitle"
+                        android:textColor="#CCFFFFFF"
+                        android:textSize="15sp" />
+
+                    <!-- 映射状态 + 详情按钮 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/statusDot"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/dot_off" />
+
+                        <TextView
+                            android:id="@+id/statusText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="@string/status_stopped"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnDetails"
+                            style="@style/Widget.Material3.Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="12dp"
+                            android:minWidth="0dp"
+                            android:minHeight="0dp"
+                            android:insetBottom="0dp"
+                            android:insetTop="0dp"
+                            android:paddingHorizontal="16dp"
+                            android:text="@string/btn_details"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            app:backgroundTint="#33FFFFFF"
+                            app:cornerRadius="16dp"
+                            app:rippleColor="#33FFFFFF" />
+                    </LinearLayout>
+
+                    <!-- 运行日志 / 错误信息：默认隐藏，点「详情」展开 -->
+                    <TextView
+                        android:id="@+id/hintText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/bg_hint_card"
+                        android:lineSpacingExtra="2dp"
+                        android:padding="14dp"
+                        android:textAlignment="textStart"
+                        android:textColor="#E6FFFFFF"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        tools:text="5666: unable to connect to proxy"
+                        tools:visibility="visible" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnOpenFnos"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="36dp"
+                        android:text="@string/btn_open_fnos"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="#2563EB"
+                        app:cornerRadius="28dp"
+                        app:icon="@drawable/ic_open_app"
+                        app:iconGravity="textStart"
+                        app:iconTint="#FFFFFF"
+                        app:rippleColor="#33FFFFFF" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnToggle"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/btn_start"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        app:backgroundTint="#26FFFFFF"
+                        app:cornerRadius="28dp"
+                        app:rippleColor="#33FFFFFF" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLan"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/btn_lan_enable"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        app:backgroundTint="#26FFFFFF"
+                        app:cornerRadius="28dp"
+                        app:rippleColor="#33FFFFFF" />
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+            </ScrollView>
+
+            <!-- ============ 第 3 屏：飞牛音乐页（左滑进入） ============ -->
+            <ScrollView
+                android:id="@+id/pageFnmusic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_fnmusic_page"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="32dp">
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:layout_width="104dp"
+                        android:layout_height="104dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_fnmusic_logo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/fnmusic_title"
+                        android:textColor="#FFFFFF"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/fnmusic_subtitle"
+                        android:textColor="#CCFFFFFF"
+                        android:textSize="15sp" />
+
+                    <!-- 映射状态 + 详情按钮 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/statusDotFnmusic"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/dot_off" />
+
+                        <TextView
+                            android:id="@+id/statusTextFnmusic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="@string/status_stopped"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnDetailsFnmusic"
+                            style="@style/Widget.Material3.Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="12dp"
+                            android:minWidth="0dp"
+                            android:minHeight="0dp"
+                            android:insetBottom="0dp"
+                            android:insetTop="0dp"
+                            android:paddingHorizontal="16dp"
+                            android:text="@string/btn_details"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            app:backgroundTint="#33FFFFFF"
+                            app:cornerRadius="16dp"
+                            app:rippleColor="#33FFFFFF" />
+                    </LinearLayout>
+
+                    <!-- 运行日志：默认隐藏，点「详情」展开 -->
+                    <TextView
+                        android:id="@+id/hintTextFnmusic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/bg_hint_card"
+                        android:lineSpacingExtra="2dp"
+                        android:padding="14dp"
+                        android:textAlignment="textStart"
+                        android:textColor="#E6FFFFFF"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        tools:text="5666: unable to connect to proxy"
+                        tools:visibility="visible" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnOpenFnmusic"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="36dp"
+                        android:text="@string/btn_open_fnmusic"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="#EB2B4F"
+                        app:cornerRadius="28dp"
+                        app:icon="@drawable/ic_open_app"
+                        app:iconGravity="textStart"
+                        app:iconTint="#FFFFFF"
+                        app:rippleColor="#33FFFFFF" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnToggleFnmusic"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/btn_start"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        app:backgroundTint="#26FFFFFF"
+                        app:cornerRadius="28dp"
+                        app:rippleColor="#33FFFFFF" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLanFnmusic"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/btn_lan_enable"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        app:backgroundTint="#26FFFFFF"
+                        app:cornerRadius="28dp"
+                        app:rippleColor="#33FFFFFF" />
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+    </com.example.fnmapper.SnapHorizontalScrollView>
+
+    <!-- 悬浮工具栏：透明背景，齿轮常驻右上角，背景图延伸到其下方 -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:fitsSystemWindows="true"
+        app:contentInsetEnd="4dp"
+        app:contentInsetStart="4dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

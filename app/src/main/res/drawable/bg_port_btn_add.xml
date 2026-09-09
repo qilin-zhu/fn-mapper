@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- fnos-scanner .scan-btn 同款绿色渐变按钮 -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#33FFFFFF">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="315"
+                android:startColor="#37E0B2"
+                android:endColor="#22B98F" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+</ripple>

@@ -1,0 +1,19 @@
+# Gradle / Android 构建产物
+.gradle/
+build/
+app/build/
+local.properties
+
+# IDE
+.idea/
+.kotlin/
+*.iml
+
+# 编译产物与第三方安装包
+*.apk
+fnos-scanner/fnos-scanner-linux-amd64
+fnos-scanner/trim-cli
+
+# 系统文件
+.DS_Store
+Thumbs.db
